@@ -1,15 +1,16 @@
 import AboutMe from "@/components/Sections/HomPage/AboutMe";
+import Header from "@/components/Sections/HomPage/Header";
 
 export default function Home() {
   return (
     <>
       <header>
-      
+      <Header/>
       </header>
-      <main className="">
+      <main>
       <AboutMe/>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+      <footer>
         
       </footer>
     </>
