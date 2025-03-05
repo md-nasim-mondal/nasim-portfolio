@@ -1,10 +1,9 @@
 "use client";
+import useAppStore from "@/store/useAppStore";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
-// import useAuth from "../../hooks/useAuth";
 
 interface Project {
   id?: string;
@@ -21,8 +20,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, setProjectId }) => {
-  //   const { isOpen, setIsOpen } = useAuth();
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, setIsOpen } = useAppStore();
 
   const handleViewDetails = (id?: string) => {
     setProjectId(id);

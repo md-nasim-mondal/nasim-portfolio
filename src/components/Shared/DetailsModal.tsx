@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
 import Modal from "./UI/Modal";
+import useAppStore from "@/store/useAppStore";
 
 interface Project {
   title?: string;
@@ -11,8 +11,7 @@ interface DetailsModalProps {
 }
 
 const DetailsModal: React.FC<DetailsModalProps> = ({ project }) => {
-//   const { isOpen, setIsOpen } = useAuth();
-  const [isOpen, setIsOpen] = useState(false)
+  const { isOpen, setIsOpen } = useAppStore()
 
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen} title={`Details of ${project?.title}`}>
