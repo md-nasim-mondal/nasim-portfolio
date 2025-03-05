@@ -3,8 +3,8 @@ import { create } from 'zustand';
 interface AppState {
   menuOpen: boolean;
   setMenuOpen: (menuOpen: boolean) => void;
-  activeLink: string;
-  setActiveLink: (activeLink: string) => void;
+  activeSection: string;
+  setActiveSection: (activeSection: string) => void;
   scrollScreen: boolean;
   setScrollScreen: (scrollScreen: boolean) => void;
   isOpen: boolean;
@@ -15,8 +15,8 @@ const useAppStore = create<AppState>((set) => ({
   menuOpen: false,
   setMenuOpen: (menuOpen) => set({ menuOpen }),
 
-  activeLink: '',
-  setActiveLink: (activeLink) => set({ activeLink }),
+  activeSection: 'home',
+  setActiveSection: (activeSection) => set({ activeSection }),
 
   scrollScreen: false,
   setScrollScreen: (scrollScreen) => set({ scrollScreen }),
