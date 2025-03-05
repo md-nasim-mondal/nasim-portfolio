@@ -36,7 +36,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, setProjectId }) => {
         <Image
           src={project.image || ""} // Works for both string and StaticImageData
           alt={project.title || ""}
-          className='rounded-t-lg object-cover'
+          className='rounded-t-lg object-fill'
           fill // Fill the parent container
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
         />

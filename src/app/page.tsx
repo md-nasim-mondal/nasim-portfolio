@@ -1,4 +1,4 @@
-"use client"
+import "@/app/globals.css"
 import AboutMe from "@/components/Sections/HomPage/AboutMe";
 import CompletedProjects from "@/components/Sections/HomPage/CompletedProjects";
 import Educations from "@/components/Sections/HomPage/Educations";
@@ -15,9 +15,9 @@ export default function Home() {
       <main>
       <AboutMe/>
       <Skills/>
+      <Services/>
       <Educations/>
       <CompletedProjects/>
-      <Services/>
       </main>
       <footer>
         
