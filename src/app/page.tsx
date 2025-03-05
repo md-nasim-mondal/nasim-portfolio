@@ -1,6 +1,7 @@
 import "@/app/globals.css"
 import AboutMe from "@/components/Sections/HomPage/AboutMe";
 import CompletedProjects from "@/components/Sections/HomPage/CompletedProjects";
+import Contact from "@/components/Sections/HomPage/Contact";
 import Educations from "@/components/Sections/HomPage/Educations";
 import Header from "@/components/Sections/HomPage/Header";
 import Services from "@/components/Sections/HomPage/Services";
@@ -18,6 +19,7 @@ export default function Home() {
       <Services/>
       <Educations/>
       <CompletedProjects/>
+      <Contact/>
       </main>
       <footer>
         
