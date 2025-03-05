@@ -10,7 +10,7 @@ import Skills from "@/components/Sections/HomPage/Skills";
 
 export default function Home() {
   return (
-    <>
+    <div className="w-full mx-auto overflow-x-hidden">
       <header>
         <Header />
       </header>
@@ -25,6 +25,6 @@ export default function Home() {
       <footer>
         <Footer />
       </footer>
-    </>
+    </div>
   );
 }
