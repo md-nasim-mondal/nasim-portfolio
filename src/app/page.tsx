@@ -1,10 +1,10 @@
 "use client"
 import AboutMe from "@/components/Sections/HomPage/AboutMe";
+import CompletedProjects from "@/components/Sections/HomPage/CompletedProjects";
 import Educations from "@/components/Sections/HomPage/Educations";
 import Header from "@/components/Sections/HomPage/Header";
 import Services from "@/components/Sections/HomPage/Services";
 import Skills from "@/components/Sections/HomPage/Skills";
-import WorkExperience from "@/components/Sections/HomPage/WorkExperience";
 
 export default function Home() {
   return (
@@ -15,8 +15,8 @@ export default function Home() {
       <main>
       <AboutMe/>
       <Skills/>
-      <WorkExperience/>
       <Educations/>
+      <CompletedProjects/>
       <Services/>
       </main>
       <footer>

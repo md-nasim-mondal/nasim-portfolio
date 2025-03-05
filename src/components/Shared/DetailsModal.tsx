@@ -3,7 +3,12 @@ import Modal from "./UI/Modal";
 import useAppStore from "@/store/useAppStore";
 
 interface Project {
+  id?: string;
   title?: string;
+  image?: string;
+  clientRepo?: string;
+  serverRepo?: string;
+  link?: string;
 }
 
 interface DetailsModalProps {
