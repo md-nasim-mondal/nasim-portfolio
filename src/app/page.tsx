@@ -1,4 +1,4 @@
-import AboutMe from "@/components/Sections/Hompage/AboutMe";
+import AboutMe from "@/components/Sections/HomPage/AboutMe";
 
 export default function Home() {
   return (
