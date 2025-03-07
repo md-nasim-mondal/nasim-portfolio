@@ -23,7 +23,7 @@ interface ApiResponse {
 
 interface ContactForm extends HTMLFormElement {
   email: HTMLInputElement;
-  nameInput: HTMLInputElement; 
+  nameInput: HTMLInputElement;
   subject: HTMLInputElement;
   message: HTMLTextAreaElement;
 }
@@ -33,11 +33,11 @@ const Contact = () => {
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const sectionStyle = {
-    background: "#22252C",
-    color: "white",
-    padding: "20px 0",
-  };
+  // const sectionStyle = {
+  //   background: "#22252C",
+  //   color: "white",
+  //   padding: "20px 0",
+  // };
 
   const handleSubmit = async (e: React.FormEvent<ContactForm>) => {
     e.preventDefault();
@@ -83,9 +83,9 @@ const Contact = () => {
   };
 
   return (
-    <section id='contact' style={sectionStyle}>
+    <section id='contact' className='py-20 text-white bg-[#22252C]'>
       <Container>
-        <h2 className='text-3xl md:text-5xl font-bold my-12 text-center'>
+        <h2 className='text-3xl md:text-5xl font-bold mb-12 text-center'>
           <span className='bg-gradient-to-r from-[#1FB382] to-[#24DFDE] bg-clip-text text-transparent'>
             Contact With Me
           </span>

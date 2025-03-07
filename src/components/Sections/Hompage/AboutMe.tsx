@@ -28,11 +28,15 @@ const AboutMe: React.FC = () => {
             <Image
               src={profilePic}
               alt='Md. Nasim Mondal'
+              width={320}
+              height={320}
+              priority
               className='w-64 lg:w-72 xl:w-80 h-64 lg:h-72 xl:h-80 object-cover rounded-full p-6 lg:p-8 xl:p-10 border-4 border-[#03CAB0]'
             />
             <button
               onClick={handleResumeDownload}
-              className='mt-4 md:mt-6 lg:mt-8 w-52 text-center lg:ml-[15%] bg-gradient-to-r from-[#1FB382] to-[#24DFDE] text-white rounded-lg px-4 py-2 shadow-lg hover:bg-gradient-to-r hover:from-teal-700 hover:to-teal-500 flex items-center justify-center space-x-2 transition-colors duration-300'>
+              aria-label='Download Resume'
+              className='mt-4 md:mt-6 lg:mt-8 w-52 text-center lg:ml-[15%] gradient-button rounded-lg px-4 py-2 shadow-lg flex items-center justify-center space-x-2'>
               <FontAwesomeIcon icon={faCloudDownloadAlt} className='text-lg' />
               <span>Download Resume</span>
             </button>
@@ -41,16 +45,18 @@ const AboutMe: React.FC = () => {
           {/* About Me Details */}
           <div className='w-full lg:w-2/3'>
             <h2 className='text-3xl md:text-4xl font-bold mb-4 text-center lg:text-start'>
-              <span className='bg-gradient-to-r from-[#1FB382] to-[#24DFDE] bg-clip-text text-transparent'>
+              <span className='gradient-text'>
                 ABOUT ME
               </span>
             </h2>
             <p className='text-lg leading-relaxed text-center lg:text-start'>
-              Hello! I&apos;m Md. Nasim Mondal, a MERN Stack Developer currently
-              studying B.Sc IN CSE at Uttara University. Experienced with all
-              stages of the development cycle for dynamic web projects. Having
-              an in-depth knowledge including advanced HTML5, CSS3, JavaScript,
-              React JS. Strong background in management and leadership.
+              Hello! I&apos;m Md. Nasim Mondal, a passionate MERN Stack Developer and a recent graduate in Computer Science from Uttara University. Although I am a fresher, I have hands-on experience in building dynamic web projects and a strong foundation in modern web technologies like HTML5, CSS3, JavaScript, and React JS. I am eager to contribute to innovative projects, learn from experienced professionals, and grow as a developer.
+            </p>
+            <p className='text-lg leading-relaxed text-center lg:text-start mt-4'>
+              As a fresher, I am highly motivated to learn and adapt to new challenges. I believe in continuous improvement and am always looking for opportunities to enhance my skills and contribute to meaningful projects. During my academic journey, I completed several projects, including a full-stack e-commerce website and a task management application, which helped me gain practical experience in web development.
+            </p>
+            <p className='text-lg leading-relaxed text-center lg:text-start mt-4'>
+              I am excited to start my professional journey and would love to connect with like-minded individuals and organizations. Feel free to reach out to me for any opportunities or collaborations!
             </p>
             <div className='flex justify-center lg:justify-start'>
               <div className='mt-8 space-y-1'>
@@ -59,7 +65,7 @@ const AboutMe: React.FC = () => {
                   Nasim Mondal
                 </p>
                 <p>
-                  <span className='font-bold text-[#03CAB0]'>Age:</span> 24
+                  <span className='font-bold text-[#03CAB0]'>AGE:</span> 24
                 </p>
                 <p>
                   <span className='font-bold text-[#03CAB0]'>NATIONALITY:</span>{" "}

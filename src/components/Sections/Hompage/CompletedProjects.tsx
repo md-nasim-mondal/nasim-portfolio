@@ -1,3 +1,4 @@
+"use client"
 import Container from "@/components/Shared/Container";
 import img1 from "@/../public/assets/images/img1.png";
 import img2 from "@/../public/assets/images/img2.png";

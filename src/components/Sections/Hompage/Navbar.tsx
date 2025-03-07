@@ -1,6 +1,7 @@
 "use client";
 import useAppStore from "@/store/useAppStore";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+
 interface LinkItem {
   id: string;
   label: string;
@@ -12,15 +13,20 @@ const links: LinkItem[] = [
   { id: "skills", label: "Skills" },
   { id: "services", label: "Services" },
   { id: "education", label: "Education" },
-  //   { id: 'experience', label: 'Experience' },
   { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
 ];
 
 const Navbar = () => {
-  const [activeSection, setActiveSection] = useState<string>("home");
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const { scrollScreen, setScrollScreen } = useAppStore();
+  const {
+    scrollScreen,
+    setScrollScreen,
+    activeSection,
+    setActiveSection,
+    menuOpen,
+    setMenuOpen,
+  } = useAppStore();
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > window.innerHeight * 0.3) {
@@ -28,21 +34,14 @@ const Navbar = () => {
       } else {
         setScrollScreen(false);
       }
-    };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [setScrollScreen]);
-
-  useEffect(() => {
-    const handleScroll = () => {
       const sections = links.map((link) => document.getElementById(link.id));
       let currentSection = "home";
 
       for (const section of sections) {
         if (section) {
           const rect = section.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
+          if (rect.top <= 150 && rect.bottom >= 150) {
             currentSection = section.id;
             break;
           }
@@ -53,7 +52,15 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [setScrollScreen, setActiveSection]);
+
+  const handleSmoothScroll = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false);
+    }
+  };
 
   return (
     <nav
@@ -69,15 +76,15 @@ const Navbar = () => {
         <ul className='hidden lg:flex space-x-6'>
           {links.map((link) => (
             <li key={link.id}>
-              <a
-                href={`/#${link.id}`}
-                className={`block text-lg font-semibold transition-colors duration-300  hover:text-gray-500 hover:underline  ${
+              <button
+                onClick={() => handleSmoothScroll(link.id)}
+                className={`block text-lg font-semibold transition-colors duration-300 ${
                   activeSection === link.id
                     ? "font-extrabold text-gray-900 border-b-2 border-gray-900 text-xl"
-                    : "text-white font-semibold"
+                    : "text-white font-semibold hover:text-gray-500 hover:underline"
                 }`}>
                 {link.label}
-              </a>
+              </button>
             </li>
           ))}
         </ul>
@@ -92,22 +99,18 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <ul
-          className={`lg:hidden ${
-            menuOpen ? "block" : "hidden"
-          } bg-teal-500 rounded-xl p-4 space-y-2 w-32 text-center ml-auto`}>
+        <ul className='lg:hidden bg-teal-500 rounded-xl p-4 space-y-2 w-32 text-center ml-auto'>
           {links.map((link) => (
             <li key={link.id}>
-              <a
-                href={`/#${link.id}`}
+              <button
+                onClick={() => handleSmoothScroll(link.id)}
                 className={`block text-lg font-semibold py-2 transition-colors duration-300 ${
                   activeSection === link.id
                     ? "font-bold border-b-2 border-white rounded-lg"
                     : "text-white font-semibold"
-                }`}
-                onClick={() => setMenuOpen(false)}>
+                }`}>
                 {link.label}
-              </a>
+              </button>
             </li>
           ))}
         </ul>

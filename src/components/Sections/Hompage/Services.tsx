@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Container from "@/components/Shared/Container";
 import React from "react";
 import {
@@ -51,7 +51,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id='services' className='bg-[#22252C] text-white py-16'>
+    <section id='services' className='bg-[#22252C] text-white py-20'>
       <Container>
         <div className='container mx-auto'>
           <h2 className='text-3xl md:text-5xl font-bold mb-16 text-center'>
@@ -63,14 +63,20 @@ const Services = () => {
             {services?.map((service, index) => (
               <div
                 key={index}
-                className='p-8 bg-gray-800 rounded-lg shadow-md text-center'>
+                className='p-8 bg-gray-800 rounded-lg shadow-md text-center hover:bg-gray-700 transition-all duration-300 animate-fade-in-up'
+                style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className='mb-4 text-5xl text-[#24DFDE] flex justify-center'>
                   {React.createElement(service?.icon)}
                 </div>
                 <h3 className='text-2xl font-semibold mb-4'>
                   {service?.title}
                 </h3>
-                <p>{service?.description}</p>
+                <p className='mb-4'>{service?.description}</p>
+                <button
+                  onClick={() => alert(`Learn more about ${service.title}`)}
+                  className='bg-gradient-to-r from-[#1FB382] to-[#24DFDE] text-white px-4 py-2 rounded-lg hover:from-[#1a8c6e] hover:to-[#1fb3a1] transition-all duration-300'>
+                  Learn More
+                </button>
               </div>
             ))}
           </div>
