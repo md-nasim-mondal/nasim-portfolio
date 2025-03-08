@@ -25,7 +25,6 @@ export default function Home() {
       <footer>
         <Footer />
       </footer>
-      {/* THIS MAIN PAGE */}
     </div>
   );
 }
