@@ -52,7 +52,7 @@ const Contact = () => {
     };
 
     const JSONdata = JSON.stringify(formData);
-    const endpoint = `${process.env.NEXT_PUBLIC_BASE_URL}/message/send`; // Backend API endpoint
+    const endpoint = `${process.env.NEXT_PUBLIC_BASE_URL as string}/api/contact/message/send`; // Backend API endpoint
 
     const options = {
       method: "POST",
