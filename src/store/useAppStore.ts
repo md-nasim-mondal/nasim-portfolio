@@ -11,6 +11,8 @@ interface AppState {
   setIsOpen: (isOpen: boolean) => void;
 }
 
+// ? This is portfolio app store for state management with zustand 
+
 const useAppStore = create<AppState>((set) => ({
   menuOpen: false,
   setMenuOpen: (menuOpen) => set({ menuOpen }),
