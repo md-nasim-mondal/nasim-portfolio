@@ -1,4 +1,3 @@
-"use client";
 import Container from "@/components/Shared/Container";
 import React from "react";
 import {
@@ -72,11 +71,11 @@ const Services = () => {
                   {service?.title}
                 </h3>
                 <p className='mb-4'>{service?.description}</p>
-                <button
+                {/* <button
                   onClick={() => alert(`Learn more about ${service.title}`)}
                   className='bg-gradient-to-r from-[#1FB382] to-[#24DFDE] text-white px-4 py-2 rounded-lg hover:from-[#1a8c6e] hover:to-[#1fb3a1] transition-all duration-300'>
                   Learn More
-                </button>
+                </button> */}
               </div>
             ))}
           </div>

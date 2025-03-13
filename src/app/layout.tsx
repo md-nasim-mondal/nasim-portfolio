@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google"; // শুধু Poppins ফন্ট ইমপোর্ট
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Sections/HomPage/Navbar";
 const poppins = Poppins({
@@ -9,37 +9,35 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Md. Nasim Mondal | MERN Stack & Next.js Developer",
+  metadataBase: new URL("https://nasim-mondal.vercel.app"),
+  title: "Md. Nasim Mondal | MERN Stack Developer",
   description:
     "Md. Nasim Mondal is a skilled MERN Stack & Next.js Developer specializing in React, TypeScript, MongoDB, and building SEO-optimized, high-performance web applications. Expert in frontend and full-stack development.",
   keywords: [
+    "Md. Nasim Mondal",
     "MERN Stack Developer",
     "MERN Developer",
     "Full Stack Developer",
     "Frontend Developer",
     "Backend Developer",
-    "Next.js",
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "MongoDB",
     "Next.js Developer",
     "React Developer",
-    "TypeScript Expert",
     "JavaScript Developer",
+    "TypeScript Expert",
     "Frontend Web Developer",
+    "Full Stack Web Developer",
   ],
   authors: [
-    { name: "Md. Nasim Mondal", url: "https://your-portfolio-link.com" },
+    { name: "Md. Nasim Mondal", url: "https://nasim-mondal.vercel.app" },
   ],
   openGraph: {
     title: "Md. Nasim Mondal | MERN Stack Developer",
     description:
       "Experienced MERN Stack Developer specializing in Next.js, React, and TypeScript.",
-    url: "https://your-portfolio-link.com",
+    url: "https://nasim-mondal.vercel.app",
     images: [
       {
-        url: "https://your-portfolio-link.com/og-image.jpg",
+        url: "/assets/images/Md_Nasim_Mondal-MERN_Stack_Developer.png",
         width: 1200,
         height: 630,
         alt: "Md. Nasim Mondal Portfolio",
@@ -51,7 +49,7 @@ export const metadata: Metadata = {
     title: "Md. Nasim Mondal | MERN Stack Developer",
     description:
       "Building high-performance web applications with Next.js, React, and TypeScript.",
-    images: ["https://your-portfolio-link.com/og-image.jpg"],
+    images: ["/assets/images/Md_Nasim_Mondal-MERN_Stack_Developer.png"],
   },
   robots: "index, follow",
 };
