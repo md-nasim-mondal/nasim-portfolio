@@ -23,8 +23,8 @@ export async function POST(req: Request) {
       },
     });
 
-    // **Sender's Email Template**
-    const senderTemplate = `
+    // **MessageSender's Email Template**
+    const thankyouTemplate = `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -48,19 +48,36 @@ export async function POST(req: Request) {
                 <p style="color: #000000;"><strong>Phone:</strong> <a href="https://wa.me/88016206676" style="color: #1cc88a; text-decoration: none;">Message on WhatsApp</a></p>
             </div>
             <div style="background: linear-gradient(to right, #4e73df, #1cc88a); padding: 10px; text-align: left; color: #ffffff; font-size: 14px; border-radius: 0 0 10px 10px;">
-                <p>Md. Nasim Mondal | MERN Stack Developer</p>
-                <p>Email: <a href="mailto:mdnasimmondal622@gmail.com" style="color: #ffffff; text-decoration: none; font-weight: bold;">mdnasimmondal622@gmail.com</a></p>
-                <p>Portfolio: <a href="https://your-portfolio-link.com" style="color: #ffffff; text-decoration: none; font-weight: bold;">View Portfolio</a></p>
-                <p>Phone: <a href="tel:+88016206676" style="color: #ffffff; text-decoration: none; font-weight: bold;">+880 16206676</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/md-nasim-mondal" target="_blank" style="color: #ffffff; text-decoration: none; font-weight: bold;">View LinkedIn</a></p>
+                <div style="font-size: 18px; font-weight: bold;">Md. Nasim Mondal</div>
+                <div style="font-size: 16px; font-weight: normal; opacity: 0.9;">MERN Stack Developer</div>
+                <div><span style="color: #00E6E6; font-weight: bold;">Email:</span> 
+                    <a href="mailto:mdnasimmondal622@gmail.com" style="color: #ffffff; text-decoration: none; font-weight: bold;">
+                        mdnasimmondal622@gmail.com
+                    </a>
+                </div>
+                <div><span style="color: #00E6E6; font-weight: bold;">Portfolio:</span> 
+                    <a href="https://your-portfolio-link.com"style="color: #ffffff; font-weight: bold;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                        View Portfolio
+                    </a>
+                </div>
+                <div><span style="color: #00E6E6; font-weight: bold;">Phone:</span> 
+                    <a href="tel:+88016206676" style="color: #ffffff; text-decoration: none; font-weight: bold;">
+                        +880 16206676
+                    </a>
+                </div>
+                <div><span style="color: #00E6E6; font-weight: bold;">LinkedIn:</span> 
+                    <a href="https://www.linkedin.com/in/md-nasim-mondal" target="_blank"style="color: #ffffff; font-weight: bold;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                        View LinkedIn
+                    </a>
+                </div>
             </div>
         </div>
     </body>
     </html>
     `;
 
-    // **Receiver's Email Template**
-    const receiverTemplate = `
+    // **owner's Email Template**
+    const ownerTemplate = `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -83,31 +100,48 @@ export async function POST(req: Request) {
                 </div>
             </div>
             <div style="background: linear-gradient(to right, #4e73df, #1cc88a); padding: 10px; text-align: left; color: #ffffff; font-size: 14px; border-radius: 0 0 10px 10px;">
-                <p>Md. Nasim Mondal | MERN Stack Developer</p>
-                <p>Email: <a href="mailto:mdnasimmondal622@gmail.com" style="color: #ffffff; text-decoration: none; font-weight: bold;">mdnasimmondal622@gmail.com</a></p>
-                <p>Portfolio: <a href="https://your-portfolio-link.com" style="color: #ffffff; text-decoration: none; font-weight: bold;">View Portfolio</a></p>
-                <p>Phone: <a href="tel:+88016206676" style="color: #ffffff; text-decoration: none; font-weight: bold;">+880 16206676</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/md-nasim-mondal" target="_blank" style="color: #ffffff; text-decoration: none; font-weight: bold;">View LinkedIn</a></p>
+                <div style="font-size: 18px; font-weight: bold;">Md. Nasim Mondal</div>
+                <div style="font-size: 16px; font-weight: normal; opacity: 0.9;">MERN Stack Developer</div>
+                <div><span style="color: #00E6E6; font-weight: bold;">Email:</span> 
+                    <a href="mailto:mdnasimmondal622@gmail.com" style="color: #ffffff; text-decoration: none; font-weight: bold;">
+                        mdnasimmondal622@gmail.com
+                    </a>
+                </div>
+                <div><span style="color: #00E6E6; font-weight: bold;">Portfolio:</span> 
+                    <a href="https://your-portfolio-link.com" style="color: #ffffff; font-weight: bold;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                        View Portfolio
+                    </a>
+                </div>
+                <div><span style="color: #00E6E6; font-weight: bold;">Phone:</span> 
+                    <a href="tel:+88016206676" style="color: #ffffff; text-decoration: none; font-weight: bold;">
+                        +880 16206676
+                    </a>
+                </div>
+                <div><span style="color: #00E6E6; font-weight: bold;">LinkedIn:</span> 
+                    <a href="https://www.linkedin.com/in/md-nasim-mondal" target="_blank" style="color: #ffffff; font-weight: bold;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                        View LinkedIn
+                    </a>
+                </div>
             </div>
         </div>
     </body>
     </html>
     `;
 
-    // Send Email to Receiver (You)
+    // Send Email to Owner (You)
     await transporter.sendMail({
       from: process.env.NEXT_AUTH_GMAIL_USER as string,
       to: process.env.NEXT_AUTH_GMAIL_USER as string, // Your Email
       subject: `New Inquiry: ${subject}`,
-      html: receiverTemplate,
+      html: ownerTemplate,
     });
 
-    // Send Confirmation Email to Sender
+    // Send Confirmation Email to Message Sender
     await transporter.sendMail({
       from: process.env.NEXT_AUTH_GMAIL_USER as string,
       to: email,
       subject: "Thank You for Reaching Out!",
-      html: senderTemplate,
+      html: thankyouTemplate,
     });
 
     return NextResponse.json(
