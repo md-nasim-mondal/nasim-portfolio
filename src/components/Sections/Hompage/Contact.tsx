@@ -52,7 +52,9 @@ const Contact = () => {
     };
 
     const JSONdata = JSON.stringify(formData);
-    const endpoint = `${process.env.NEXT_PUBLIC_BASE_URL as string}/api/contact/message/send`; // Backend API endpoint
+    const endpoint = `${
+      process.env.NEXT_PUBLIC_BASE_URL as string
+    }/api/contact/message/send`; // Backend API endpoint
 
     const options = {
       method: "POST",
@@ -119,7 +121,7 @@ const Contact = () => {
           </div>
           <div className='md:w-1/2 w-full'>
             {emailSubmitted ? (
-              <p className='text-green-500 text-4xl mt-12'>
+              <p className='bg-gradient-to-r from-[#1FB382] to-[#24DFDE] bg-clip-text text-transparent text-2xl mt-12'>
                 Successfully Sent Email. Please Check Your Mail!!
               </p>
             ) : (

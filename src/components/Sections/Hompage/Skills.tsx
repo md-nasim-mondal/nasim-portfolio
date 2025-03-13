@@ -17,6 +17,7 @@ import {
     SiNetlify,
     SiFirebase,
     SiFigma,
+    SiTypescript,
   } from "react-icons/si";
   import {
     FiHeadphones,
@@ -72,6 +73,10 @@ import {
                     <h4 className='text-xl'>React</h4>
                   </div>
                   <div className='bg-gray-800 p-4 rounded-lg'>
+                    <SiTypescript className='mx-auto text-3xl mb-2 text-[#007acc] bg-white' />
+                    <h4 className='text-xl'>TypeScript</h4>
+                  </div>
+                  <div className='bg-gray-800 p-4 rounded-lg'>
                     <FaJs className='mx-auto text-3xl mb-2 text-yellow-500' />
                     <h4 className='text-xl'>JavaScript</h4>
                   </div>
@@ -85,11 +90,11 @@ import {
                   </div>
                   <div className='bg-gray-800 p-4 rounded-lg'>
                     <FaCss3Alt className='mx-auto text-3xl mb-2 text-blue-600' />
-                    <h4 className='text-xl'>CSS</h4>
+                    <h4 className='text-xl'>CSS3</h4>
                   </div>
                   <div className='bg-gray-800 p-4 rounded-lg'>
                     <FaHtml5 className='mx-auto text-3xl mb-2 text-orange-600' />
-                    <h4 className='text-xl'>HTML</h4>
+                    <h4 className='text-xl'>HTML5</h4>
                   </div>
                   <div className='bg-gray-800 p-4 rounded-lg'>
                     <BiLogoVisualStudio className='mx-auto text-3xl mb-2 text-blue-500' />
