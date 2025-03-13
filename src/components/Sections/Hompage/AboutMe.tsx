@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import profilePic from "@/../public/assets/images/md-nasim-mondal.jpg";
 import Container from "@/components/Shared/Container";
@@ -16,7 +16,7 @@ const AboutMe: React.FC = () => {
   const handleResumeDownload = () => {
     const link =
       "https://drive.google.com/uc?export=download&id=1sTZr36o1IEOwKRYUAsDVpjXF4LMXtvEt";
-    saveAs(link, "Resume of Md Nasim Mondal.pdf");
+    saveAs(link, "MERN Stack Developer Resume of Md Nasim Mondal.pdf");
   };
 
   return (
@@ -40,23 +40,78 @@ const AboutMe: React.FC = () => {
               <FontAwesomeIcon icon={faCloudDownloadAlt} className='text-lg' />
               <span>Download Resume</span>
             </button>
+            {/* My Interests */}
+            <div className='container mx-auto mt-20 hidden lg:block'>
+              <h3 className='text-2xl md:text-3xl font-bold mb-4 text-center lg:text-start lg:ml-[15%]'>
+                <span className='bg-gradient-to-r from-[#1FB382] to-[#24DFDE] bg-clip-text text-transparent'>
+                  MY INTERESTS
+                </span>
+              </h3>
+              <div className='flex justify-center lg:justify-start space-x-8 mt-6 lg:ml-[8.2%]'>
+                <div className='text-center group'>
+                  <div className='w-16 h-16 border-2 rounded-full flex items-center justify-center mb-2 group-hover:bg-gradient-to-r from-[#1FB382] to-[#24DFDE] relative border-[#03CAB0] text-[#03CAB0] hover:text-white'>
+                    <FontAwesomeIcon
+                      icon={faCode}
+                      className='text-xl md:text-2xl xl:text-3xl'
+                    />
+                    <span className='absolute bottom-[-2.1rem] left-1/2 transform -translate-x-1/2 text-sm bg-black text-white p-1 rounded opacity-0 group-hover:opacity-100'>
+                      Programming
+                    </span>
+                  </div>
+                </div>
+                <div className='text-center group'>
+                  <div className='w-16 h-16 border-2 rounded-full flex items-center justify-center mb-2 group-hover:bg-gradient-to-r from-[#1FB382] to-[#24DFDE] relative border-[#03CAB0] text-[#03CAB0] hover:text-white'>
+                    <FontAwesomeIcon
+                      icon={faPlane}
+                      className='text-xl md:text-2xl xl:text-3xl'
+                    />
+                    <span className='absolute bottom-[-2.1rem] left-1/2 transform -translate-x-1/2 text-sm bg-black text-white p-1 rounded opacity-0 group-hover:opacity-100'>
+                      Traveling
+                    </span>
+                  </div>
+                </div>
+                <div className='text-center group'>
+                  <div className='w-16 h-16 border-2 rounded-full flex items-center justify-center mb-2 group-hover:bg-gradient-to-r from-[#1FB382] to-[#24DFDE] relative border-[#03CAB0] text-[#03CAB0] hover:text-white'>
+                    <FontAwesomeIcon
+                      icon={faCoffee}
+                      className='text-xl md:text-2xl xl:text-3xl'
+                    />
+                    <span className='absolute bottom-[-2.1rem] left-1/2 transform -translate-x-1/2 text-sm bg-black text-white p-1 rounded opacity-0 group-hover:opacity-100'>
+                      Coffee
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* About Me Details */}
           <div className='w-full lg:w-2/3'>
             <h2 className='text-3xl md:text-4xl font-bold mb-4 text-center lg:text-start'>
-              <span className='gradient-text'>
-                ABOUT ME
-              </span>
+              <span className='gradient-text'>ABOUT ME</span>
             </h2>
             <p className='text-lg leading-relaxed text-center lg:text-start'>
-              Hello! I&apos;m Md. Nasim Mondal, a passionate MERN Stack Developer and a recent graduate in Computer Science from Uttara University. Although I am a fresher, I have hands-on experience in building dynamic web projects and a strong foundation in modern web technologies like HTML5, CSS3, JavaScript, and React JS. I am eager to contribute to innovative projects, learn from experienced professionals, and grow as a developer.
+              Hello! I&apos;m Md. Nasim Mondal, a passionate MERN Stack
+              Developer and a recent graduate in Computer Science from Uttara
+              University. Although I am a fresher, I have hands-on experience in
+              building dynamic web projects and a strong foundation in modern
+              web technologies like HTML5, CSS3, JavaScript, and React JS. I am
+              eager to contribute to innovative projects, learn from experienced
+              professionals, and grow as a developer.
             </p>
             <p className='text-lg leading-relaxed text-center lg:text-start mt-4'>
-              As a fresher, I am highly motivated to learn and adapt to new challenges. I believe in continuous improvement and am always looking for opportunities to enhance my skills and contribute to meaningful projects. During my academic journey, I completed several projects, including a full-stack e-commerce website and a task management application, which helped me gain practical experience in web development.
+              As a fresher, I am highly motivated to learn and adapt to new
+              challenges. I believe in continuous improvement and am always
+              looking for opportunities to enhance my skills and contribute to
+              meaningful projects. During my academic journey, I completed
+              several projects, including a full-stack e-commerce website and a
+              task management application, which helped me gain practical
+              experience in web development.
             </p>
             <p className='text-lg leading-relaxed text-center lg:text-start mt-4'>
-              I am excited to start my professional journey and would love to connect with like-minded individuals and organizations. Feel free to reach out to me for any opportunities or collaborations!
+              I am excited to start my professional journey and would love to
+              connect with like-minded individuals and organizations. Feel free
+              to reach out to me for any opportunities or collaborations!
             </p>
             <div className='flex justify-center lg:justify-start'>
               <div className='mt-8 space-y-1'>
@@ -89,8 +144,8 @@ const AboutMe: React.FC = () => {
         </div>
 
         {/* My Interests */}
-        <div className='container mx-auto mt-20 lg:ml-[4.5%]'>
-          <h3 className='text-2xl md:text-3xl font-bold mb-4 text-center lg:text-start'>
+        <div className='container mx-auto mt-20 lg:ml-[4.5%] lg:hidden'>
+          <h3 className='text-2xl md:text-3xl font-bold mb-4 text-center lg:text-start lg:ml-[2%]'>
             <span className='bg-gradient-to-r from-[#1FB382] to-[#24DFDE] bg-clip-text text-transparent'>
               MY INTERESTS
             </span>
