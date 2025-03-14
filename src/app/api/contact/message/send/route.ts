@@ -24,9 +24,6 @@ export async function POST(req: Request) {
       },
     });
 
-    // <div style="font-size: 18px; font-weight: bold;">Md. Nasim Mondal</div>
-    // <div style="font-size: 16px; font-weight: normal; opacity: 0.9;">MERN Stack Developer</div>
-
     // **MessageSender's Email Template**
     const thankYouEmail = getThankYouTemplate(name, message);
 

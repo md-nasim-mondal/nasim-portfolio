@@ -23,6 +23,10 @@ export const getThankYouTemplate = (name: string, message: string) => `
 </html>
 `;
 
+
+  // <div style="font-size: 18px; font-weight: bold;">Md. Nasim Mondal</div>
+    // <div style="font-size: 16px; font-weight: normal; opacity: 0.9;">MERN Stack Developer</div>
+
 export const getOwnerTemplate = (
   name: string,
   email: string,
