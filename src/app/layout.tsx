@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     url: "https://nasim-mondal.vercel.app",
     images: [
       {
-        url: "/assets/images/Md_Nasim_Mondal-MERN_Stack_Developer.png",
+        url: "https://nasim-mondal.vercel.app/assets/images/Md_Nasim_Mondal-MERN_Stack_Developer.png",
         width: 1200,
         height: 630,
         alt: "Md. Nasim Mondal Portfolio",
@@ -49,7 +49,9 @@ export const metadata: Metadata = {
     title: "Md. Nasim Mondal | MERN Stack Developer",
     description:
       "Building high-performance web applications with Next.js, React, and TypeScript.",
-    images: ["/assets/images/Md_Nasim_Mondal-MERN_Stack_Developer.png"],
+    images: [
+      "https://nasim-mondal.vercel.app/assets/images/Md_Nasim_Mondal-MERN_Stack_Developer.png",
+    ],
   },
   robots: "index, follow",
 };
@@ -63,7 +65,11 @@ export default function RootLayout({
     <html lang='en'>
       <head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
+        <link
+          rel='icon'
+          type='image/png'
+          href='/assets/images/md-nasim-mondal.jpg'
+        />
       </head>
       <body className={`${poppins.variable} antialiased`}>
         <Navbar />
