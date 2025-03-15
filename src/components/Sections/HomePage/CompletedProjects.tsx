@@ -8,11 +8,11 @@ import ProjectItem from "@/components/Shared/ProjectItem";
 import ProjectDetailsModal from "@/components/Shared/ProjectDetailsModal";
 const CompletedProjects = () => {
   const [projectId, setProjectId] = useState(0);
-
   const projects = [
     {
       id: 1,
       title: "PetLoversHub",
+      shortDescription: "A Simple Pet Adoption Platform",
       description:
         "PetLoversHub is pet adopt related Website.This platform aims to create a user-friendly interface for individuals to search for, connect with, and adopt pets in need of loving homes. Built using the MERN stack, PetLoversHub strives to make pet adoption as seamless and efficient as possible.",
       link: "https://pet-lovers-hub.netlify.app",
@@ -34,6 +34,7 @@ const CompletedProjects = () => {
     {
       id: 2,
       title: "StudySphere",
+      shortDescription: "A Simple Assignment Related Platform",
       description:
         "StudySphere is a Assignment Related Platform, your all-encompassing platform for seamless assignment management and academic collaboration. At StudySphere, we provide a dynamic environment where users can effortlessly create, update, and delete assignments, tailored to specific user requirements.Our user-centric approach ensures flexibility and ease of use, allowing instructors to craft assignments with precision and students to engage actively.",
       link: "https://studysphere-1f8dd.web.app",
@@ -54,6 +55,7 @@ const CompletedProjects = () => {
     {
       id: 3,
       title: "GlobeGuidanceHub",
+      shortDescription: "A Simple Tours Guide Related Platform",
       description:
         "GlobeGuidanceHub is a tours guide related platform, your ultimate destination for tourism management. Explore diverse cultures, breathtaking landscapes, and unforgettable adventures. Plan your next trip with ease, discover hidden gems, and immerse yourself in enriching experiences. Start your journey today and unlock the wonders of the world with GlobeGuidanceHub.",
       link: "https://harvest-hub-client.web.app",
