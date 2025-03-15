@@ -86,7 +86,7 @@ const CompletedProjects = () => {
       <Container>
         <div className='container mx-auto '>
           <h2 className='lg:text-5xl text-4xl font-extrabold text-white uppercase text-center mb-20'>
-            Some Of My Completed Projects
+            Recently, Completed Projects
           </h2>
           <div className='mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {projects?.map((project, index) => (

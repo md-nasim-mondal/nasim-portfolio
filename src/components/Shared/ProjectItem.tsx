@@ -7,6 +7,7 @@ import Image, { StaticImageData } from "next/image";
 interface Project {
   id: number;
   title?: string;
+  shortDescription?: string;
   image?: string | StaticImageData;
   clientRepo?: string;
   serverRepo?: string;
@@ -47,7 +48,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, setProjectId }) => {
           {project.title}
         </h3>
 
-        
+        <p>{project?.shortDescription}</p>
 
         {/* Preview and View Details Buttons */}
         <div className='flex gap-[4%] flex-wrap justify-between'>
