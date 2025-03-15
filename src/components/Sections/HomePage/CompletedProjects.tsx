@@ -30,6 +30,7 @@ const CompletedProjects = () => {
         "Additional Libraries → React Tooltip, React-Quill, imgbb API, Stripe for payment processing, react-loading-skeleton, TanStack Table.",
       ],
       image: img1,
+      // type: "Team Project"
     },
     {
       id: 2,

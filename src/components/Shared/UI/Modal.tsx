@@ -22,7 +22,7 @@ export default function Modal({ isOpen, setIsOpen, title, children }: ModalProps
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={closeModal}>
+      <Dialog as="div" className="relative z-50" onClose={closeModal}>
         <TransitionChild
           as={Fragment}
           enter="ease-out duration-300"
@@ -46,8 +46,8 @@ export default function Modal({ isOpen, setIsOpen, title, children }: ModalProps
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <DialogPanel className="w-full max-w-xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                <DialogTitle as="h3" className="text-lg font-medium leading-6 text-gray-900 text-center">
+              <DialogPanel className="w-full md:max-w-3xl lg:max-w-4xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <DialogTitle as="h3" className="text-2xl md:text-3xl font-bold leading-12 text-stone-600 text-center">
                   {title}
                 </DialogTitle>
                 {children}

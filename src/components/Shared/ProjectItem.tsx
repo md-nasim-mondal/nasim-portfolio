@@ -14,6 +14,7 @@ interface Project {
   link?: string;
   features?: string[];
   technologies?: string[];
+  type?: string;
 }
 
 interface ProjectItemProps {
@@ -32,37 +33,45 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, setProjectId }) => {
   return (
     <div className='bg-white text-stone-500 rounded-lg shadow-lg transform hover:-translate-y-2 transition-all duration-300'>
       {/* Project Image */}
-      <div className='relative h-72 w-full'>
+      <div className='relative h-72 w-full overflow-hidden rounded-t-lg'>
         <Image
-          src={project.image || ""} // Works for both string and StaticImageData
-          alt={project.title || ""}
-          className='rounded-t-lg object-fill'
-          fill // Fill the parent container
+          src={project?.image || ""}
+          alt={project?.title || "Project Image"}
+          className='object-cover'
+          fill
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
         />
       </div>
 
       {/* Project Details */}
-      <div className='p-6'>
-        <h3 className='text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-stone-500 text-center'>
+      <div className='p-6 text-center'>
+        <h3 className='text-xl md:text-2xl font-semibold mb-3 text-stone-600'>
           {project.title}
         </h3>
 
-        <p>{project?.shortDescription}</p>
+        {/* Short Description with Light Color */}
+        <p className='text-stone-400 text-sm md:text-base mb-4'>
+          {project?.shortDescription} {project?.type && `(${project?.type})`}
+        </p>
 
-        {/* Preview and View Details Buttons */}
-        <div className='flex gap-[4%] flex-wrap justify-between'>
-          <a
-            href={project.link}
-            className='flex-1 text-center bg-gradient-to-r from-[#24DFDE] to-[#1FB382] text-white rounded-lg px-4 py-2 shadow-lg hover:bg-gradient-to-r hover:from-teal-700 hover:to-teal-500 flex items-center justify-center space-x-2 transition-colors duration-300 uppercase'>
-            <span>Preview</span>
-            <FontAwesomeIcon icon={faEye} className='text-lg' />
-          </a>
+        {/* Buttons Section */}
+        <div className='flex flex-col sm:flex-row gap-3'>
+          {/* Live Preview Button */}
+          {project?.link && (
+            <a
+              href={project?.link}
+              className='w-full sm:w-[48%] text-center bg-gradient-to-r from-[#24DFDE] to-[#1FB382] text-white rounded-lg px-4 py-2 shadow-md hover:opacity-90 flex items-center justify-center space-x-2 transition-all duration-300 uppercase'>
+              <span>Preview</span>
+              <FontAwesomeIcon icon={faEye} className='text-sm' />
+            </a>
+          )}
+
+          {/* View Details Button */}
           <button
             onClick={() => handleViewDetails(project?.id)}
-            className='text-center bg-gradient-to-r from-[#1FB382] to-[#24DFDE] text-white rounded-lg px-4 py-2 shadow-lg hover:bg-gradient-to-r hover:from-teal-700 hover:to-teal-500 flex items-center justify-center space-x-2 transition-colors duration-300 uppercase'>
+            className='w-full sm:w-[48%] text-center bg-gradient-to-r from-[#1FB382] to-[#24DFDE] text-white rounded-lg px-4 py-2 shadow-md hover:opacity-90 flex items-center justify-center space-x-2 transition-all duration-300 uppercase'>
             <span>View Details</span>
-            <FontAwesomeIcon icon={faEye} className='text-lg' />
+            <FontAwesomeIcon icon={faEye} className='text-sm' />
           </button>
         </div>
       </div>

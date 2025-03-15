@@ -64,7 +64,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed z-50 w-full p-6 ${
+      className={`fixed z-20 w-full p-6 ${
         scrollScreen
           ? "bg-gradient-to-r from-[#1FB382] to-[#24DFDE] shadow-2xl"
           : "bg-transparent"
