@@ -1,16 +1,17 @@
-"use client"
+"use client";
 import Container from "@/components/Shared/Container";
 import img1 from "@/../public/assets/images/img1.png";
 import img2 from "@/../public/assets/images/img2.png";
 import img3 from "@/../public/assets/images/img3.png";
 import { useState } from "react";
 import ProjectItem from "@/components/Shared/ProjectItem";
-import DetailsModal from "@/components/Shared/DetailsModal";
+import ProjectDetailsModal from "@/components/Shared/ProjectDetailsModal";
 const CompletedProjects = () => {
-  const [projectId, setProjectId] = useState(0)
+  const [projectId, setProjectId] = useState(0);
 
   const projects = [
-    { id: 1,
+    {
+      id: 1,
       title: "PetLoversHub",
       description:
         "PetLoversHub is pet adopt related Website.This platform aims to create a user-friendly interface for individuals to search for, connect with, and adopt pets in need of loving homes. Built using the MERN stack, PetLoversHub strives to make pet adoption as seamless and efficient as possible.",
@@ -74,7 +75,7 @@ const CompletedProjects = () => {
     },
   ];
 
-  const project = projects.find(project => project?.id === projectId) || {}
+  const project = projects.find((project) => project?.id === projectId) || {};
 
   return (
     <section
@@ -87,12 +88,16 @@ const CompletedProjects = () => {
           </h2>
           <div className='mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {projects?.map((project, index) => (
-              <ProjectItem key={index} project={project} setProjectId={setProjectId} />
+              <ProjectItem
+                key={index}
+                project={project}
+                setProjectId={setProjectId}
+              />
             ))}
           </div>
         </div>
       </Container>
-      <DetailsModal  project={project} />
+      <ProjectDetailsModal project={project} />
     </section>
   );
 };

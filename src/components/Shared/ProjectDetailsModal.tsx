@@ -15,11 +15,11 @@ interface Project {
   technologies?: string[];
 }
 
-interface DetailsModalProps {
+interface ProjectDetailsModalProps {
   project?: Project;
 }
 
-const DetailsModal: React.FC<DetailsModalProps> = ({ project }) => {
+const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ project }) => {
   const { isOpen, setIsOpen } = useAppStore();
 
   return (
@@ -64,4 +64,4 @@ const DetailsModal: React.FC<DetailsModalProps> = ({ project }) => {
   );
 };
 
-export default DetailsModal;
+export default ProjectDetailsModal;
