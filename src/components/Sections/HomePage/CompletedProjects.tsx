@@ -4,7 +4,7 @@ import img1 from "@/../public/assets/images/img1.png";
 import img2 from "@/../public/assets/images/img2.png";
 import img3 from "@/../public/assets/images/img3.png";
 import { useState } from "react";
-import ProjectItem from "@/components/Shared/ProjectItem";
+import ProjectCard from "@/components/Shared/ProjectCard";
 import ProjectDetailsModal from "@/components/Shared/ProjectDetailsModal";
 const CompletedProjects = () => {
   const [projectId, setProjectId] = useState(0);
@@ -91,7 +91,7 @@ const CompletedProjects = () => {
           </h2>
           <div className='mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {projects?.map((project, index) => (
-              <ProjectItem
+              <ProjectCard
                 key={index}
                 project={project}
                 setProjectId={setProjectId}

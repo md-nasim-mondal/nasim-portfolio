@@ -17,12 +17,12 @@ interface Project {
   type?: string;
 }
 
-interface ProjectItemProps {
+interface ProjectCardProps {
   project: Project;
   setProjectId: (id: number) => void;
 }
 
-const ProjectItem: React.FC<ProjectItemProps> = ({ project, setProjectId }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, setProjectId }) => {
   const { isOpen, setIsOpen } = useAppStore();
 
   const handleViewDetails = (id: number) => {
@@ -79,4 +79,4 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, setProjectId }) => {
   );
 };
 
-export default ProjectItem;
+export default ProjectCard;
